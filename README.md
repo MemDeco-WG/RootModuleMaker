@@ -275,6 +275,20 @@ uv tool install -e .
 
 - GITHUB_ACCESS_TOKEN: 用于访问GitHub API的令牌 如果未设置 无法使用发布release功能
 
+
+## 附录
+
+- 一些备忘命令
+
+- pwsh -- 生成项目结构树 和 提取符号列表（分析源代码时使用）
+-  Set-Location -LiteralPath 'C:\Users\light\Documents\GitHub\RootModuleMaker\rust'; cargo modules structure > modules.tree; Write-Host "wrote modules.tree (lines: $(Get-Content modules.tree).Length)"; Set-Location -LiteralPath 'C:\Users\light\Documents\GitHub\RootModuleMaker' ; Get-ChildItem -Path .\rust\src -Recurse -Include *.rs | Select-String -Pattern '^\s*(pub\s+)?(fn|struct|enum|mod)\s+' | ForEach-Object { "{0}:{1}:{2}" -f $_.Path, $_.LineNumber, $_.Line } | Out-File -FilePath .\rust\symbols.txt -Encoding utf8; Write-Host "wrote rust\symbols.txt (lines: $(Get-Content .\rust\symbols.txt).Length)"
+
+- 以上命令中的路径记得替换为你的实际路径
+
+
+
+
+
 ## 致谢名单
 
 > Credits

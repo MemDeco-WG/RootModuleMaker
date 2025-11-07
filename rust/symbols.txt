@@ -1,0 +1,208 @@
+src\cmds\sync\discovery.rs:8:pub fn sync_specific_project(_core: &RmmCore, _project_name: &str) -> Result<()> {
+src\cmds\sync\discovery.rs:12:pub fn search_and_add_project(_core: &RmmCore, _project_name: &str, _meta: &mut MetaConfig) -> Result<()> {
+src\cmds\sync\discovery.rs:20:pub fn sync_version_info(_core: &RmmCore, _project_path: &Path) -> Result<()> {
+src\cmds\sync\discovery.rs:26:pub fn sync_all_projects(_core: &RmmCore) -> Result<()> {
+src\cmds\sync\discovery.rs:30:pub fn remove_duplicate_projects(_core: &RmmCore) -> Result<Vec<String>> {
+src\cmds\sync\registry.rs:4:pub fn register_project(_id: &str, _url: &str) -> Result<()> {
+src\cmds\sync\registry.rs:8:pub fn unregister_project(_id: &str) -> Result<()> {
+src\cmds\sync\sync.rs:4:pub fn perform_project_sync() -> Result<()> {
+src\cmds\sync\version.rs:5:pub struct VersionInfo {
+src\cmds\sync\version.rs:11:    pub fn new(version: &str, version_code: &str) -> Self {
+src\cmds\sync\version.rs:15:    pub fn smart_bump_version(&mut self, _project_path: &Path) {
+src\cmds\sync\version.rs:19:    pub fn from_module_prop(_project_path: &Path) -> Result<Self> {
+src\cmds\sync\version.rs:23:    pub fn update_module_prop(&self, _project_path: &Path) -> Result<()> {
+src\cmds\sync\version.rs:28:pub fn sync_version_info(_core: &RmmCore, _project_path: &Path) -> Result<()> {
+src\cmds\sync\version.rs:32:pub fn generate_version_code(_project_path: &Path) -> String {
+src\cmds\sync\version.rs:36:pub fn smart_version_bump(_current_version: &str, _project_path: &Path) -> String {
+src\cmds\sync\version.rs:40:pub fn sync_update_json(_project_path: &Path, _version_info: &VersionInfo) -> Result<()> {
+src\cmds\sync\version.rs:44:pub fn sync_global_version(_core: &RmmCore, _project_version: &str) -> Result<()> {
+src\cmds\sync\version.rs:48:pub fn extract_major_version(version: &str) -> Result<u32, std::num::ParseIntError> {
+src\cmds\sync\versioning.rs:3:pub fn discover_versions() -> Result<Vec<String>> {
+src\cmds\add.rs:15:pub struct AddOptions {
+src\cmds\add.rs:43:    fn default() -> Self {
+src\cmds\add.rs:61:pub struct AddArgs {
+src\cmds\add.rs:106:pub fn add_cli_entry(core: &RmmCore, project_root: &Path, args: AddArgs) -> Result<ResolvedDependency> {
+src\cmds\add.rs:118:pub fn parse_raw_spec(raw_spec: &str) -> Result<DependencySpec> {
+src\cmds\add.rs:131:pub fn add_parsed_spec(core: &RmmCore, project_root: &Path, spec: &DependencySpec, options: AddOptions) -> Result<ResolvedDependency> {
+src\cmds\add.rs:139:pub fn persist_dependency_to_manifest(project_root: &Path, spec: &DependencySpec) -> Result<()> {
+src\cmds\add.rs:145:pub fn write_lock_entry(project_root: &Path, resolved: &ResolvedDependency) -> Result<()> {
+src\cmds\add.rs:153:pub fn install_resolved_artifact(project_root: &Path, resolved: &ResolvedDependency, options: &AddOptions) -> Result<std::path::PathBuf> {
+src\cmds\add.rs:159:pub fn options_from_args(args: &AddArgs) -> AddOptions {
+src\cmds\add.rs:177:pub fn add_usage() -> &'static str {
+src\cmds\build.rs:9:pub struct BuildArgs {
+src\cmds\build.rs:95:pub fn find_source_file(_build_file: &Path) -> Option<PathBuf> {
+src\cmds\build.rs:99:pub fn normalize_line_endings(_content: &str) -> String {
+src\cmds\build.rs:103:pub fn needs_line_ending_normalization(_file_path: &Path) -> bool {
+src\cmds\check.rs:9:pub struct CheckArgs {
+src\cmds\check.rs:56:pub fn format_check_results(issues: &[String], verbose: bool) -> String {
+src\cmds\cmds.rs:21:pub fn run_script(project_path: &Path, script_name: Option<&str>) -> Result<()> {
+src\cmds\cmds.rs:25:pub fn sync_projects() -> Result<()> {
+src\cmds\cmds.rs:30:pub fn show_version() {
+src\cmds\init.rs:22:fn copy_template_files(project_path: &Path, template_name: &str) -> Result<()> {
+src\cmds\init.rs:51:fn copy_dir_recursive(src: &Path, dest: &Path) -> Result<()> {
+src\cmds\install.rs:24:pub enum InstallTarget {
+src\cmds\install.rs:35:pub struct InstallArgs {
+src\cmds\install.rs:91:pub fn install_package(package_path: &Path, target: InstallTarget, installer: Option<&Path>, force: bool, dry_run: bool) -> Result<()> {
+src\cmds\install.rs:106:pub fn find_default_installer(target: InstallTarget) -> Option<PathBuf> {
+src\cmds\install.rs:120:pub fn render_installer_command(installer_path: &Path, package_path: &Path, target: InstallTarget, force: bool, no_reboot: bool) -> (PathBuf, Vec<String>) {
+src\cmds\install.rs:130:pub fn validate_privileges() -> Result<()> {
+src\cmds\run.rs:5:pub fn run_script(project_path: &Path, script_name: Option<&str>) -> Result<()> {
+src\cmds\run.rs:13:mod tests {
+src\cmds\run.rs:17:    fn test_is_valid_project() {
+src\cmds\sync.rs:4:pub mod discovery;
+src\cmds\sync.rs:5:pub mod version;
+src\cmds\sync.rs:6:pub mod author;
+src\cmds\sync.rs:7:pub mod registry;
+src\cmds\sync.rs:8:pub mod sync;
+src\cmds\sync.rs:9:pub mod versioning;
+src\cmds\sync.rs:12:pub fn sync_projects() -> Result<()> {
+src\cmds\test_run.rs:7:fn test_run_script_success() {
+src\cmds\test_run.rs:17:fn test_run_script_no_script() {
+src\cmds\test_run.rs:27:fn test_run_script_invalid_script() {
+src\cmds\test_run.rs:38:fn test_run_script_invalid_path() {
+src\cmds\test_sync.rs:6:fn test_sync_projects_success() {
+src\cmds\test_sync.rs:13:fn test_sync_projects_all() {
+src\cmds\test_sync.rs:21:fn test_sync_projects_only() {
+src\cmds\test_sync.rs:29:fn test_sync_projects_with_paths() {
+src\cmds\test_sync.rs:37:fn test_sync_projects_max_depth() {
+src\cmds\test_version.rs:4:fn test_version_display() {
+src\cmds\test_version.rs:13:fn test_version_parsing() {
+src\cmds\test_version.rs:21:fn test_version_comparison() {
+src\cmds\version.rs:5:pub fn get_version() -> &'static str {
+src\cmds\version.rs:10:pub fn show_version() {
+src\core\author.rs:9:pub fn merge_authors(primary: Option<&Author>, fallback: Option<&Author>, fallback2: Option<&Author>) -> Author {
+src\core\author.rs:38:pub fn author_from_module_prop(module_prop: &ModuleProp) -> Option<Author> {
+src\core\author.rs:44:pub fn author_from_git_info(git_name: Option<&str>, git_email: Option<&str>) -> Option<Author> {
+src\core\author.rs:60:pub fn author_from_meta(_meta: &MetaConfig) -> Option<Author> {
+src\core\author.rs:66:pub fn validate_author(author: &Author) -> bool {
+src\core\cache.rs:4:pub struct CacheItem<T> {
+src\core\cache.rs:10:    pub fn new(data: T, ttl: Duration) -> Self {
+src\core\cache.rs:14:    pub fn is_expired(&self) -> bool {
+src\core\deps.rs:25:pub enum SourceType {
+src\core\deps.rs:39:    fn resolve(&self, spec: &DependencySpec) -> Result<ResolvedDependency>;
+src\core\deps.rs:42:    fn resolve_many(&self, specs: &[DependencySpec]) -> Result<Vec<ResolvedDependency>> {
+src\core\deps.rs:58:    fn fetch(&self, resolved: &ResolvedDependency, cache_dir: &Path) -> Result<PathBuf>;
+src\core\deps.rs:65:pub struct DependencyManager;
+src\core\deps.rs:74:    pub fn add_dependency(
+src\core\deps.rs:86:    pub fn remove_dependency(project_root: &Path, id_or_alias: &str, remove_files: bool) -> Result<()> {
+src\core\deps.rs:93:    pub fn list_dependencies(project_root: &Path) -> Result<Vec<ResolvedDependency>> {
+src\core\deps.rs:101:    pub fn resolve_spec(spec: &DependencySpec, project_root: Option<&Path>) -> Result<ResolvedDependency> {
+src\core\deps.rs:107:    pub fn fetch_resolved(resolved: &ResolvedDependency, cache_dir: &Path) -> Result<PathBuf> {
+src\core\deps.rs:114:    pub fn install_from_lock(project_root: &Path) -> Result<()> {
+src\core\deps.rs:120:    pub fn update_lock_entry(project_root: &Path, resolved: &ResolvedDependency) -> Result<()> {
+src\core\deps.rs:128:    pub fn ensure_consistency(project_root: &Path) -> Result<()> {
+src\core\deps.rs:137:pub mod helpers {
+src\core\deps.rs:142:    pub fn parse_dependencies_from_rmm(_rmm: &RmmProject) -> Result<Vec<DependencySpec>> {
+src\core\deps.rs:149:    pub fn add_and_sync_module(
+src\core\deps.rs:162:    pub fn derive_module_prop(_rmm: &RmmProject, _deps: Option<&[ResolvedDependency]>) -> Result<ModuleProp> {
+src\core\deps.rs:167:    pub fn read_lockfile(_project_root: &Path) -> Result<RmmLock> {
+src\core\deps.rs:172:    pub fn write_lockfile(_project_root: &Path, _lock: &RmmLock) -> Result<()> {
+src\core\deps.rs:177:    pub fn resolved_to_lock_entry(_resolved: &ResolvedDependency) -> DependencyLockEntry {
+src\core\env.rs:27:pub struct EnvConfig {
+src\core\env.rs:41:    pub fn from_env() -> Self {
+src\core\env.rs:48:    pub fn github_token_trimmed(&self) -> Option<&str> {
+src\core\env.rs:59:pub fn init_from_dotenv() -> Result<()> {
+src\core\env.rs:67:pub fn load_config() -> EnvConfig {
+src\core\env.rs:77:pub struct ProxyManager {
+src\core\env.rs:84:    pub fn new(proxies: Vec<String>) -> Self {
+src\core\env.rs:90:    pub fn from_env_config(cfg: &EnvConfig) -> Self {
+src\core\env.rs:96:    pub fn len(&self) -> usize {
+src\core\env.rs:102:    pub fn is_empty(&self) -> bool {
+src\core\env.rs:108:    pub fn current(&self) -> Option<&str> {
+src\core\env.rs:114:    pub fn advance(&mut self) -> Option<&str> {
+src\core\error.rs:4:pub enum CoreError {
+src\core\features.rs:10:pub enum Feature {
+src\core\features.rs:32:pub enum SupportLevel {
+src\core\features.rs:42:pub struct FeatureSpec {
+src\core\features.rs:50:pub struct FeaturesManager;
+src\core\features.rs:54:    pub fn new() -> Self {
+src\core\features.rs:59:    pub fn list_features(&self) -> Vec<FeatureSpec> {
+src\core\features.rs:85:    pub fn is_supported(&self, feature: Feature) -> bool {
+src\core\features.rs:90:    pub fn enable_feature(&self, _feature: Feature) -> Result<(), CoreError> {
+src\core\features.rs:95:    pub fn disable_feature(&self, _feature: Feature) -> Result<(), CoreError> {
+src\core\features.rs:100:    pub fn configure_feature(&self, _feature: Feature, _config: Option<&str>) -> Result<(), CoreError> {
+src\core\git.rs:6:pub struct GitAnalyzer;
+src\core\git.rs:9:    pub fn analyze_git_info(_path: &Path) -> Result<Option<GitInfo>, CoreError> {
+src\core\git.rs:13:    pub fn find_git_root(_path: &Path) -> Result<Option<std::path::PathBuf>, CoreError> {
+src\core\git.rs:17:    pub fn read_user_config(_repo_root: &Path) -> Result<(String, String), CoreError> {
+src\core\packaging.rs:34:pub fn create_zip_archive<W: Write + Seek>(_source_dir: &Path, _output: W) -> Result<()> {
+src\core\packaging.rs:41:pub fn add_directory_to_zip<W: Write + Seek>(_dir: &Path, _writer: &mut W) -> Result<()> {
+src\core\packaging.rs:47:pub fn create_tar_gz_archive(_source_dir: &Path, _output_path: &Path) -> Result<()> {
+src\core\packaging.rs:52:pub fn add_directory_to_tar<W: Write>(_dir: &Path, _writer: &mut W) -> Result<()> {
+src\core\packaging.rs:59:pub fn execute_postbuild(_project_path: &Path) -> Result<()> {
+src\core\packaging.rs:64:pub fn execute_source_packaging(_project_path: &Path) -> Result<()> {
+src\core\packaging.rs:69:pub fn copy_source_files(_project_path: &Path, _source_build_dir: &Path) -> Result<()> {
+src\core\packaging.rs:74:pub fn execute_source_prebuild(_project_path: &Path) -> Result<()> {
+src\core\packaging.rs:81:pub fn package_source_code(_project_path: &Path, _source_build_dir: &Path) -> Result<()> {
+src\core\packaging.rs:86:pub fn execute_source_postbuild(_project_path: &Path) -> Result<()> {
+src\core\packaging.rs:91:pub fn copy_file_with_line_ending_normalization(_src: &Path, _dst: &Path) -> Result<()> {
+src\core\packaging.rs:99:pub fn apply_exclusions_and_collect_paths(_project_path: &Path) -> Result<Vec<PathBuf>> {
+src\core\project.rs:7:pub fn is_valid_project(_project_path: &Path) -> bool {
+src\core\runtime.rs:25:pub enum RuntimeTarget {
+src\core\runtime.rs:39:    pub fn from_str_hint(s: &str) -> Self {
+src\core\runtime.rs:49:    pub fn as_str(&self) -> &'static str {
+src\core\runtime.rs:61:pub enum DeleteStrategy {
+src\core\runtime.rs:76:pub enum ScriptKind {
+src\core\runtime.rs:87:pub enum ZygiskSupport {
+src\core\runtime.rs:106:pub fn detect_runtime_environment(env: &HashMap<String, String>) -> RuntimeTarget {
+src\core\runtime.rs:129:pub fn validate_module_for_runtime(
+src\core\runtime.rs:151:pub fn render_module_for_target(
+src\core\runtime.rs:169:pub fn package_module_for_target(
+src\core\runtime.rs:181:pub fn default_busybox_path_for_target(target: &RuntimeTarget) -> Option<&'static str> {
+src\core\runtime.rs:195:pub fn produce_install_manifest(module_root: &Path) -> RuntimeResult<JsonValue> {
+src\core\types.rs:20:pub enum SourceType {
+src\core\types.rs:29:    fn from(s: &str) -> Self {
+src\core\types.rs:44:pub struct DependencySpec {
+src\core\types.rs:68:    pub fn parse(_raw: &str) -> Result<Self> {
+src\core\types.rs:76:pub struct ResolvedDependency {
+src\core\types.rs:88:pub struct DependencyLockEntry {
+src\core\types.rs:100:pub struct RmmLock {
+src\core\types.rs:108:    pub fn read_from_project(_project_root: &Path) -> Result<Self> {
+src\core\types.rs:113:    pub fn write_to_project(&self, _project_root: &Path) -> Result<()> {
+src\core\types.rs:124:pub struct RmmCore {
+src\core\types.rs:137:pub struct MetaConfig {
+src\core\types.rs:147:pub struct Author {
+src\core\types.rs:154:    pub fn is_default(&self) -> bool {
+src\core\types.rs:159:    pub fn from_git(_path: &std::path::Path) -> Option<Self> {
+src\core\types.rs:166:    pub fn merge(primary: Option<&Author>, fallback: Option<&Author>, fallback2: Option<&Author>) -> Author {
+src\core\types.rs:177:pub struct ProjectTable {
+src\core\types.rs:194:pub struct ToolTable {
+src\core\types.rs:203:pub struct RmmToolTable {
+src\core\types.rs:225:pub struct RmmProject {
+src\core\types.rs:243:pub struct ModuleProp {
+src\core\types.rs:286:    pub fn validate(&self) -> Result<()> {
+src\core\types.rs:297:pub struct UpdateJson {
+src\core\types.rs:344:pub struct WebUiConfig {
+src\core\types.rs:367:pub struct ProjectScanResult {
+src\core\types.rs:374:pub struct GitInfo {
+src\core\types.rs:393:pub fn rmm_from_pyproject(_pyproject_toml: &str) -> Result<RmmProject> {
+src\core\types.rs:400:pub fn rmm_to_module_prop(_rmm: &RmmProject) -> Result<ModuleProp> {
+src\core\types.rs:408:pub fn rmm_to_update_json(_rmm: &RmmProject, _version_code_override: Option<u32>) -> Result<UpdateJson> {
+src\core\types.rs:418:pub fn ensure_files_in_sync(_project_root: &Path) -> Result<()> {
+src\core\types.rs:423:pub fn read_module_prop_from_disk(_path: &Path) -> Result<ModuleProp> {
+src\core\types.rs:428:pub fn write_module_prop_to_disk(_path: &Path, _module: &ModuleProp) -> Result<()> {
+src\core\types.rs:433:pub fn read_update_json_from_disk(_path: &Path) -> Result<UpdateJson> {
+src\core\types.rs:438:pub fn write_update_json_to_disk(_path: &Path, _update: &UpdateJson) -> Result<()> {
+src\core\utils.rs:5:pub fn parse_github_url(_url: &str) -> Option<(String, String)> {
+src\core\utils.rs:10:pub fn generate_update_json_url(_remote_url: &str, _project_id: &str) -> String {
+src\core\utils.rs:14:pub fn get_git_repo_root(_path: &Path) -> Result<std::path::PathBuf, CoreError> {
+src\core\utils.rs:18:pub fn normalize_path(path: &Path) -> String {
+src\cmds.rs:3:pub mod build;
+src\cmds.rs:4:pub mod cmds;
+src\cmds.rs:5:pub mod init;
+src\cmds.rs:6:pub mod version;
+src\cmds.rs:7:pub mod run;
+src\cmds.rs:8:pub mod sync;
+src\cmds.rs:9:pub mod check;
+src\cmds.rs:10:pub mod install;
+src\core.rs:3:pub mod author;
+src\core.rs:4:pub mod cache;
+src\core.rs:5:pub mod error;
+src\core.rs:6:pub mod features;
+src\core.rs:7:pub mod git;
+src\core.rs:8:pub mod project;
+src\core.rs:9:pub mod types;
+src\core.rs:10:pub mod utils;
+src\lib.rs:6:pub mod core;
+src\lib.rs:7:pub mod cmds;
+src\lib.rs:10:pub fn init() -> Result<()> {

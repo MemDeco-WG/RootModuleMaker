@@ -1,12 +1,10 @@
-pub mod rmm_core;
-#[cfg(feature = "python-extension")]
-pub mod python_bindings;
+//! Core domain logic modules
 
-#[cfg(test)]
-mod rmm_core_tests;
-
-#[allow(unused_imports)]
-pub use rmm_core::RmmCore;
-#[cfg(feature = "python-extension")]
-#[allow(unused_imports)]
-pub use python_bindings::PyRmmCore;
+pub mod author;
+pub mod cache;
+pub mod error;
+pub mod features;
+pub mod git;
+pub mod project;
+pub mod types;
+pub mod utils;

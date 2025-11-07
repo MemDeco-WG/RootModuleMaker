@@ -1,3 +1,13 @@
+# v0.4.0
++ 不再有Rmake.toml，统一保存在rmmproject.toml中
++ 版本管理更加智能
+
+# v0.3.6
++ 移除mod.rs改用更现代化的方式组织模块代码
++ 新增二进制入口，支持cargo install 直接安装rmm
++ 交叉编译到安卓平台
++ 大量细节调整
+
 # v0.2.4
 + 新增mcp服务器 启动参数：rmm mcp 默认即可，stdio（同时支持sse模式）
 

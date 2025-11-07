@@ -1,0 +1,47 @@
+[project]
+id = "RootModuleMaker"
+description = "A Rmm project: RootModuleMaker"
+readme = "README.md"
+changelog = "CHANGELOG.md"
+license = "LICENSE"
+dependencies = []
+
+[project.scripts]
+install = "rmm device install"
+test = "rmm test"
+build = "rmm build"
+
+[[authors]]
+name = "LIghtJUNction"
+email = "LIghtJUNction.me@gmail.com"
+
+[urls]
+github = "https://github.com/MemDeco-WG/RootModuleMaker"
+
+[build-system]
+requires = ["rmm>=0.3.0"]
+build-backend = "rmm"
+
+[tool.rmm.build]
+build = ["rmm"]
+exclude = [
+    ".git",
+    ".rmmp",
+    "*.tmp",
+    "*.log",
+]
+include = ['# 额外包含的文件或目录，如："extra/"']
+postbuild = ["echo 'Build completed'"]
+prebuild = ["echo 'Starting build'"]
+
+[tool.rmm.build.scripts]
+clean = '''Remove-Item '.rmmp\build' -Recurse -Force -ErrorAction SilentlyContinue; Remove-Item '.rmmp\dist' -Recurse -Force -ErrorAction SilentlyContinue; New-Item -Path '.rmmp\build' -ItemType Directory -Force; New-Item -Path '.rmmp\dist' -ItemType Directory -Force'''
+
+[tool.rmm.build.src]
+exclude = [
+    ".git",
+    "*.tmp",
+    "*.log",
+    "node_modules",
+]
+include = ['# 源代码额外包含的文件，如："docs/"']
