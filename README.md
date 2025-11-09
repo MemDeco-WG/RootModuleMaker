@@ -77,7 +77,7 @@ avd你可以参考下面的教程，本项目拷贝了rootAVD几个关键文件�
 
 参考[rootAVD教程](https://gitlab.com/newbit/rootAVD)对你的AVD进行root.
 
-[Magick.zip版本v29](https://github.com/topjohnwu/Magisk/releases/download/v29.0/Magisk-v29.0.apk)
+**Magisk 下载**：请访问 [Magisk GitHub 仓库](https://github.com/topjohnwu/Magisk) 获取最新版本或访问 [Releases 页面](https://github.com/topjohnwu/Magisk/releases)下载所需版本。
 
 ## 使用方法
 

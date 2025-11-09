@@ -7,3 +7,5 @@ MyModule/MyModule.zip
 /rmmbox/config/target/debug
 */target*
 uv.lock
+# Large binary files that should be downloaded separately
+assets/rootAVD/Magisk.zip
